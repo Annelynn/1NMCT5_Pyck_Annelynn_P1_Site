@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+    <meta name="author" content="Annelynn Pyck">
+    <meta name="description" content="website for using ShelfChecker, a smart bookshelf">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Shelfchecker - {% block title %} {% endblock%}</title>
+</head>
+<body>
+    <header>
+        <a href="#"><img alt="logo" src="{{ url_for('static',filename='img/_Logo.png') }}"></a>
+        <nav>
+            <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Handleiding</a></li>
+                <li><a href="#">Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <p>&#169;2017</p>
+    </footer>
+</body>
+</html>
