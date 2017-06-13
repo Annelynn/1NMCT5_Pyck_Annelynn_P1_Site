@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block content %}
+    <div id="account_section1">
+        <img alt="background image with books" src="{{url_for('static', filename='img/_Placeholder.jpg')}}">
+        <h2>Account</h2>
+        <a id=button1 href="#">Bookshelf</a>
+        <a id=button2 href="#">Borrowed Books</a>
+    </div>
+{% endblock %}

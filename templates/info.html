@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Info
+{% endblock %}
+
+{% block content %}
+    <h2 id="info_h2">Info</h2>
+   <table id="info_section1">
+        <tr>
+            <td><h3>Who</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Donec finibus enim at porta euismod. Morbi quis pellentesque tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum congue odio, quis tempus dolor posuere vel. Nulla aliquam tristique ante in lobortis. Ut sit amet erat tempor, elementum dolor vitae, elementum lacus. Etiam malesuada ex felis. Mauris convallis feugiat lorem. Etiam pellentesque maximus sapien.</td>
+        </tr>
+
+        <tr>
+            <td><h3>Why</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus nulla ut elit mattis vehicula. Nunc nec ante in nulla hendrerit sodales ut et nulla. Nulla luctus nisi vel porttitor dictum. Morbi vel hendrerit velit, ut tincidunt tellus. Proin nec sapien congue, tincidunt nunc nec, feugiat ex. Quisque feugiat diam justo, at interdum neque eleifend a. Sed feugiat tortor libero, a venenatis lectus feugiat in. In auctor imperdiet condimentum. In nec dolor id sem lobortis elementum vitae at metus. Curabitur id diam felis. Nulla pulvinar iaculis libero, posuere dignissim neque feugiat eget. Curabitur vitae purus in magna feugiat sollicitudin.</td>
+        </tr>
+
+        <tr>
+            <td><h3>Where</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><img alt="map of Kortrijk" src="{{url_for('static', filename='img/_Map.PNG')}}" height="30%"></td>
+        </tr>
+
+        <tr>
+            <td><h3>How</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="http://www.instructables.com">Link to instructable</a></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><h3>More Questions?</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label>Name <input type="text" name="Name" placeholder="firstname"required></label></td>
+            <td rowspan="2"><label>Message <textarea required placeholder="Message"></textarea></label></td>
+        </tr>
+        <tr>
+            <td><label>Email <input type="email" name="Email" placeholder="email" required></label></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"><button type="submit" formmethod="post">Submit</button></td>
+        </tr>
+
+        <tr>
+            <td><h3>Social</h3></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="#">icon1</a> <a href="#">icon2</a> <a href="#">icon3</a></td>
+        </tr>
+
+   </table>
+
+{% endblock %}

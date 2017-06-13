@@ -3,3 +3,24 @@
 {% block title %}
     Home
 {% endblock %}
+
+{% block content %}
+    <div id="home_section1">
+        <img alt="background image with books" src="{{url_for('static', filename='img/_Placeholder.jpg')}}">
+        <h1>ShelfChecker</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut purus ultricies, lobortis ligula nec, hendrerit sem. Nam dui metus.</p>
+        <a href="#jump">More Info</a>
+    </div>
+
+    <div id="home_section2">
+        <a id="jump"><br></a>
+        <p>Duis fermentum tortor sed odio pharetra consectetur. Sed molestie, urna vel ultrices varius, risus felis cursus justo, at bibendum ipsum nunc nec mauris. Pellentesque molestie justo ut justo eleifend, nec volutpat lectus ornare. Nunc neque nisi, fringilla ut interdum eget, porta sit amet mauris. Suspendisse consequat ex augue. Suspendisse dictum id magna quis finibus. Aenean arcu elit, tristique non elit fermentum, venenatis eleifend elit. Proin sagittis ultrices consectetur. Donec et pretium erat. Sed ut varius metus. Mauris venenatis erat a pharetra pharetra. Suspendisse faucibus quam at odio gravida dignissim bibendum et nulla. Morbi tristique dui nec tellus porttitor efficitur. Suspendisse id consectetur mi. Aenean accumsan eros sed diam porta, in mattis felis placerat. Cras semper dignissim rutrum.</p>
+
+        <p>Vivamus molestie vehicula sollicitudin. Cras tristique urna eu ultricies egestas. Sed a magna erat. Vivamus molestie at eros sed facilisis. Nam vitae purus vitae ante tincidunt eleifend accumsan ut tortor. Integer tincidunt rutrum ligula, in lacinia risus vestibulum at. Morbi suscipit mauris molestie, rhoncus mi sed, ornare velit. Maecenas pulvinar, nisl sed sollicitudin lacinia, metus metus convallis ligula, vel hendrerit odio neque a massa. Morbi elementum interdum nisi, nec pharetra metus scelerisque ut. Donec iaculis cursus mauris quis rhoncus. Nullam ut dolor nec nulla rutrum sagittis. Donec tincidunt velit id nunc lobortis commodo. Pellentesque et sollicitudin ligula, eget interdum nibh.</p>
+
+    </div>
+
+    <div id="home_section3">
+        <img alt="this is not a photo but a video" src="{{url_for('static', filename='img/_VideoPlaceholder.jpg')}}"
+    </div>
+{% endblock %}
