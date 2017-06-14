@@ -13,6 +13,8 @@ h1{
 }
 
 h2{
+    margin: 1% 0;
+    text-align: center;
     font-size: 400%;
 }
 
@@ -21,40 +23,25 @@ h3{
 }
 
 /* HEADER */
-header{
-    background-color: #F0F7EE;
-    height: 200%;
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header > a{
-    margin-left: 5%;
-    justify-self: flex-start;
-}
-
-header > a > img{
-    height: 2em;
-}
-
 header > nav {
     list-style-type: none;
-    justify-self: flex-end;
     margin-right: 5%;
     width: 100%;
-    position: absolute;
 }
 
 header > nav > ul{
+    background-color: #F0F7EE;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-header > nav > ul > li{
+header > nav > ul > li:first-child{
+    margin-left: 5%;
+    width: 100%;
+    display: block;
+}
+header > nav > ul > li:not(:first-child){
     border-left: #FFFFFF solid 1px;
     padding: 0.5% 5%;
     display: block;
@@ -70,7 +57,7 @@ header > nav > ul > li > a{
     color: #000000;
 }
 
-header > nav > ul > li:hover{
+header > nav > ul > li:hover:not(:first-child){
     border-left: #000000 solid 1px;
     background-color: #87BBA2;
 }
@@ -126,7 +113,43 @@ header > nav > ul > li:hover{
     width: 75%;
     margin: 5% 12.5%;
 }
+/* LOGIN */
+#login_section1 > form > label, #register_section1 > form > label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 3% 45%;
+}
+#login_section1 > form > label > input, #register_section1 > form > input{
+    width: 90%;
+    margin: 3%;
+}
+#login_section1 > form > button{
+    margin: 1% 47.5%;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
+#register_section1 > form > button{
+     margin: 1% 46%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#login_section1 > p:first-child{
+    margin-top: 3%;
+    text-align: center;
+    color: #5D737E;
+}
+
+#login_section1 > p:last-child , #register_section1 > p{
+    text-align: center;
+    margin-bottom: 25%;
+}
+
+#login_section1 > p > a, #register_section1 > p > a{
+    color: black;
+}
 /* ACCOUNT */
 #account_section1 > img{
     width: 100%;
@@ -136,6 +159,13 @@ header > nav > ul > li:hover{
     width: 100%;
     text-align: center;
     top: 15%;
+}
+
+#account_section1 > p{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%;
 }
 
 #account_section1 > a{
@@ -161,38 +191,93 @@ header > nav > ul > li:hover{
     top: 55%;
 }
 
-/* INFO */
-#info_h2{
-    margin: 1% 0;
+#account_section1 > form > button{
+    position: absolute;
     text-align: center;
+    top: 85%;
+    margin: 0 47.5%;
+    overflow: hidden;
+    white-space: nowrap;
 }
+/* BOOKSHELF */
+#bookshelf_section1{
+    width: 50%;
+    height: 50%;
+    margin: 2% 30%;
+}
+#bookshelf_section1 > a{
+    width: 1%;
+    text-decoration: none;
+    border-bottom: solid #FDD05F 10px;
+}
+#bookshelf_section1 > a > img{
+    display: inline-block;
+    border: solid black 1px;
+
+    margin: 0 -0.4%;
+
+}
+
+/* INFO */
+
 #info_section1{
     width: 90%;
     margin: 2% 5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-#info_section1 td{
-    padding: 2%;
+#info_section1 > .left{
+    align-self: flex-start;
+    margin: 2% 5%;
 }
-
-#info_section1 td > a{
+#info_section1 > .right{
+    align-self: flex-end;
+}
+#info_section1 > p{
+    width: 70%;
+    margin: 4% 10%;
+}
+#info_section1 > img{
+    width: 70%;
+    height: 90%;
+    margin: 2% 10%;
+}
+#info_section1 > a{
     color: black;
-    margin-right: 5%;
+    margin-bottom: 4%;
+    width: 80%;
+    display: block;
+}
+#info_section1 > form{
+    margin-left: 5%;
 }
 
-#info_section1 input{
-    width: 100%;
-    margin: 5% 0;
-    padding: 2%;
+#info_section1 > form > label > input{
+    width: 40%;
+    margin: 2% 5%;
+    display:block;
 }
 
-#info_section1 textarea{
-    width: 100%;
-    height: 200%;
-    margin: 2% 0;
+#info_section1 > form > label > textarea{
+    width: 70%;
+    height: 200px;
+    margin: 2% 5%;
+    display: block;
 }
 
-#info_section1 button{
-    margin: 0 50%;
+#info_section1 > form > button{
+    margin: 1% 5%;
+}
+
+#info_section1 > span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#info_section1 > span > a{
+    color: black
 }
 /* FOOTER */
 footer{

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% import "macros/macros.html" as macros %}
+{% block title %}
+    Bookshelf
+{% endblock %}
+
+{% block content %}
+    <div id="bookshelf_section1">
+    {{ macros.build_shelf(books)}}
+    </div>
+{% endblock %}

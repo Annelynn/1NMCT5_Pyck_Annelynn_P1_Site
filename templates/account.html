@@ -8,7 +8,12 @@
     <div id="account_section1">
         <img alt="background image with books" src="{{url_for('static', filename='img/_Placeholder.jpg')}}">
         <h2>Account</h2>
-        <a id=button1 href="#">Bookshelf</a>
+        <p>Welcome, {{firstname}}</p>
+        <a id=button1 href={{ url_for("bookshelf") }}>Bookshelf</a>
         <a id=button2 href="#">Borrowed Books</a>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Log Out</button>
+        </form>
+
     </div>
 {% endblock %}

@@ -1,3 +1,4 @@
+{% import "macros/macros.html" as macros %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +13,10 @@
 </head>
 <body>
     <header>
-        <a href="{{url_for("home")}}"><img alt="logo" src="{{ url_for('static',filename='img/_Logo.png') }}"></a>
         <nav>
             <ul>
-                <li><a href="{{url_for("account")}}">Account</a></li>
+                <li><a href="{{url_for("home")}}"><img alt="logo" src="{{ url_for('static',filename='img/_Logo.png') }}"></a></li>
+                <li><a href="{{url_for("login")}}" onclick="showPrompt()">Account</a></li>
                 <li><a href="#">Manual</a></li>
                 <li><a href="{{url_for("info")}}">Info</a></li>
             </ul>
@@ -30,5 +31,6 @@
     <footer>
         <p>&#169;2017</p>
     </footer>
+
 </body>
 </html>
