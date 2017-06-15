@@ -3,3 +3,31 @@
 {% block title %}
     Book - {{ book["Title"] }}
 {% endblock %}
+
+{% block content %}
+    <h3>{{ book["Title"] }}</h3>
+    <h4>{{ book["Author"] }}</h4>
+    <div id="book_section1">
+        <img alt="Front cover of book {{ book["Title"] }}" src="{{ url_for("static", filename="img/Front" + book["ImageID"] + ".jpg") }}">
+        <div>
+            <p>{{ book["Synopsis"] }}</p>
+            <p><b>Publisher: </b> {{ book["Publisher"] }}</p>
+            <p><b>Release Date: </b> {{ book["ReleaseDate"] }}</p>
+            {% if book["Type"] == 0 %}
+                <p><b>Type: </b> Paperback</p>
+            {% else %}
+                <p><b>Type: </b> Paperback</p>
+            {% endif %}
+            <p><b>ISBN Number: </b> {{ book["ISBN13"] }}</p>
+            {% if(place|length == 0) %}
+                <p><b>Availability: </b> Unavailable</p>
+            {% else %}
+                {%  if(place[0]["PlaceID"] == book["PlaceID"]) %}
+                    <p><b>Availability: </b> Available</p>
+                {%  else%}
+                    <p><b>Availability: </b> Available, but on wrong place</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

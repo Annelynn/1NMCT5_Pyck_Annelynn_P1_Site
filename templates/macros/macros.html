@@ -1,7 +1,20 @@
 {% macro build_shelf(books) %}
-    {% for i in range(0,8) %}
-        <a href="{{ url_for("book",isbn=books[i]["ISBN13"]) }}">
-            <img src="{{ url_for("static",filename="img/Spine" + books[i]["ImageID"] + ".jpg") }}">
+    {% for book in books %}
+        <a href="{{ url_for("book", isbn=book["ISBN13"]) }}">
+            <img id="{{ book["ISBN13"] }}" alt="Spine of book with title {{ book["Title"] }}" src="{{ url_for("static",filename="img/Spine" + book["ImageID"] + ".jpg")}}">
         </a>
     {% endfor %}
 {% endmacro %}
+
+{% macro show_borrowed_books(borrowedBooks) %}
+    {% for book in borrowedBooks %}
+        <a href="{{ url_for("book", isbn=book[0]["ISBN13"]) }}">
+            <img alt="Front of book with title {{ book[0]["Title"] }}" src="{{ url_for("static",filename="img/Front" + book[0]["ImageID"] + ".jpg")}}">
+            <div>
+                <h3>{{ book[0]["Title"] }}</h3>
+                <h4>{{ book[0]["Author"] }}</h4>
+            </div>
+        </a>
+    {% endfor %}
+{% endmacro %}
+

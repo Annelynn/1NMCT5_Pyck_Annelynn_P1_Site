@@ -20,6 +20,12 @@ h2{
 
 h3{
     font-size: 300%;
+    text-align: center;
+    margin: 2% 0;
+}
+h4{
+    font-size: 200%;
+    text-align: center;
 }
 
 /* HEADER */
@@ -208,16 +214,71 @@ header > nav > ul > li:hover:not(:first-child){
 #bookshelf_section1 > a{
     width: 1%;
     text-decoration: none;
-    border-bottom: solid #FDD05F 10px;
 }
+
+#bookshelf_section1 .absent{
+    display: inline-block;
+    margin: 0;
+    opacity: 0.3;
+    transition: 1s;
+}
+
 #bookshelf_section1 > a > img{
     display: inline-block;
-    border: solid black 1px;
-
-    margin: 0 -0.4%;
-
+    margin: 0;
+    transition: 1s;
 }
 
+#bookshelf_section1 > a > img:hover, #bookshelf_section1 .absent:hover{
+    padding: 0 10%;
+    opacity: 1;
+}
+#graph{
+    margin: 2% 10% 10% 10%;
+}
+
+/* BOOK */
+#book_section1{
+    width: 80%;
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+}
+#book_section1 > img{
+    width: 30%;
+    height: 100%;
+    margin-left: 10%;
+}
+#book_section1 > div{
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+}
+#book_section1 > div > p:first-child{
+    margin-bottom: 4%;
+}
+
+#book_section1 > div > p > b{
+    font-weight: bold;
+}
+
+/* BORROWED BOOKS */
+#borrowedBooks_section1 {
+    margin-bottom: 20%;
+}
+
+#borrowedBooks_section1 > a{
+    display: flex;
+    flex-direction: row;
+    margin: 5% 10%;
+    text-decoration: none;
+    color: black;
+}
+
+#borrowedBooks_section1 > a > img{
+    width: 10%;
+    margin: 3%;
+}
 /* INFO */
 
 #info_section1{

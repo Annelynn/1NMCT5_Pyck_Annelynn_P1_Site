@@ -10,7 +10,7 @@
         <h2>Account</h2>
         <p>Welcome, {{firstname}}</p>
         <a id=button1 href={{ url_for("bookshelf") }}>Bookshelf</a>
-        <a id=button2 href="#">Borrowed Books</a>
+        <a id=button2 href={{ url_for("borrowedBooks") }}>Borrowed Books</a>
         <form action="{{ url_for('logout') }}" method="POST">
             <button type="submit">Log Out</button>
         </form>

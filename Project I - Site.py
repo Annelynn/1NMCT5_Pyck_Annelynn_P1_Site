@@ -71,16 +71,41 @@ def logout():
 @app.route('/bookshelf')
 def bookshelf():
     from model.DbConnection import DbConnection
+    import model.GenerateGraph as graph
     db = DbConnection("P1_Database")
     books = db.getDataFrom_TableBook()
-    return render_template('bookshelf.html', books=books)
+    places = db.getDataFrom_TablePlace()
+    graph.createGraph(books)
+    return render_template('bookshelf.html', books=books, places=places)
 
 @app.route('/book/<isbn>')
 def book(isbn):
     from model.DbConnection import DbConnection
     db = DbConnection("P1_Database")
     book = db.getDataFrom_TableBook_ColumnISBN13_ConditionForISBN13(isbn)[0]
-    return render_template('book.html', book=book)
+    place = db.getDataFrom_TablePlace_ColumnPlaceID_ConditionBook(book["ISBN13"])
+    return render_template('book.html', book=book, place=place)
+
+@app.route('/borrowedBooks')
+def borrowedBooks():
+    from model.DbConnection import DbConnection
+    db = DbConnection("P1_Database")
+    borrowedBooks_string = session["user"]["BorrowedBooks"]
+    #if borrowed books are not empty
+    if(borrowedBooks_string != None):
+        # split string into list
+        borrowedBooks_list = borrowedBooks_string.split("-")
+        borrowedBooks = []
+        # if user has borrowed books before, a "-" could be in front so here it gets taken care of
+        if(borrowedBooks_list[0] == ""):
+            for borrowedBook in borrowedBooks_list[1:]:
+                borrowedBooks.append(db.getDataFrom_TableBook_ColumnISBN13_ConditionForISBN13(borrowedBook))
+        else:
+            for borrowedBook in borrowedBooks_list:
+                borrowedBooks.append(db.getDataFrom_TableBook_ColumnISBN13_ConditionForISBN13(borrowedBook))
+        return render_template('borrowedBooks.html', borrowedBooks=borrowedBooks)
+    else:
+        return render_template('borrowedBooks.html', borrowedBooks="empty")
 
 @app.route('/info', methods=['GET', 'POST'])
 def info():

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import "macros/macros.html" as macros %}
+
+{% block title %}
+    Borrowed Books
+{% endblock %}
+
+{% block content %}
+    <div id="borrowedBooks_section1">
+    <h2>Borrowed Books</h2>
+    {% if borrowedBooks == "empty" %}
+        <h3>You did not borrow any books yet!</h3>
+    {% else %}
+        {{ macros.show_borrowed_books(borrowedBooks) }}
+    {% endif %}
+</div>
+{% endblock %}
