@@ -7,9 +7,10 @@
 
 {% block content %}
     <div id="borrowedBooks_section1">
-    <h2>Borrowed Books</h2>
+    <h2>Borrowed Books <a href="{{ url_for("bookshelf") }}">Go to bookshelf</a></h2>
     {% if borrowedBooks == "empty" %}
         <h3>You did not borrow any books yet!</h3>
+        <p>See <a href="{{ url_for("manual") }}">manual</a> for instructions on how to use <span>ShelfChecker</span></p>
     {% else %}
         {{ macros.show_borrowed_books(borrowedBooks) }}
     {% endif %}

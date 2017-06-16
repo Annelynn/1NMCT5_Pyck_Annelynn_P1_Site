@@ -176,7 +176,6 @@ header > nav > ul > li:hover:not(:first-child){
 
 #account_section1 > a{
     padding: 1% 2%;
-    border-radius: 10px;
     color: #000000;
     text-align: center;
     text-decoration: none;
@@ -188,6 +187,13 @@ header > nav > ul > li:hover:not(:first-child){
     margin: 0 42.5%;
     background-color: #FDD05F;
     font-size: 90%;
+    transition: 1s;
+}
+
+#account_section1 > a:hover{
+    color: #FDD05F;
+    background-color: #5D737E;
+    font-weight: bold;
 }
 
 #account_section1 > #button1{
@@ -207,33 +213,65 @@ header > nav > ul > li:hover:not(:first-child){
 }
 /* BOOKSHELF */
 #bookshelf_section1{
+    display: block;
+    padding: 3% 1% 5% 1%;
+    background-color:white;
+    background-image:
+    radial-gradient(#F0F7EE 9px, transparent 10px),
+    repeating-radial-gradient(#F0F7EE 0, #F0F7EE 4px, transparent 5px, transparent 20px, #F0F7EE 21px, #F0F7EE 25px, transparent 26px, transparent 50px);
+    background-size: 30px 30px, 90px 90px;
+    background-position: 0;
+}
+
+#bookshelf_title > a{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 30%;
+    padding: 1% 3%;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+    color: #87BBA2;
+    border: solid #87BBA2 1px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 1s;
+}
+
+#bookshelf_title > a:hover{
+    background-color: #87BBA2;
+    color: #FFFFFF;
+    border: none;
+}
+
+#bookshelf_section1 > #bookshelf_books{
     width: 50%;
     height: 50%;
     margin: 2% 30%;
 }
-#bookshelf_section1 > a{
+
+#bookshelf_section1 > #bookshelf_books > a{
     width: 1%;
+    border-bottom: solid #FDD05F 1em;
     text-decoration: none;
 }
 
-#bookshelf_section1 .absent{
+#bookshelf_section1 > #bookshelf_books > a > .absent{
     display: inline-block;
     margin: 0;
     opacity: 0.3;
     transition: 1s;
 }
 
-#bookshelf_section1 > a > img{
+#bookshelf_section1 > #bookshelf_books > a > img{
     display: inline-block;
     margin: 0;
     transition: 1s;
 }
 
-#bookshelf_section1 > a > img:hover, #bookshelf_section1 .absent:hover{
+#bookshelf_section1 > #bookshelf_books > a > img:hover, #bookshelf_section1 > #bookshelf_books > a > .absent:hover{
     padding: 0 10%;
     opacity: 1;
 }
-#graph{
+#bookshelf_section2 > img{
     margin: 2% 10% 10% 10%;
 }
 
@@ -253,6 +291,7 @@ header > nav > ul > li:hover:not(:first-child){
     display: flex;
     flex-direction: column;
     margin: 1%;
+    width: 70%;
 }
 #book_section1 > div > p:first-child{
     margin-bottom: 4%;
@@ -262,84 +301,215 @@ header > nav > ul > li:hover:not(:first-child){
     font-weight: bold;
 }
 
+#book_section1 > div > div {
+    margin-top: 40%;
+}
+
+#book_section1 > div > div > a{
+    padding: 2%;
+    color: #FFFFFF;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 10%;
+    background-color: #5D737E;
+    font-size: 90%;
+    transition: 1s;
+}
+
+#book_section1 > div > div > a:hover{
+    color: #5D737E;
+    background-color: #FDD05F;
+    padding: 2% 3%;
+    font-weight: bold;
+}
+
 /* BORROWED BOOKS */
 #borrowedBooks_section1 {
     margin-bottom: 20%;
 }
 
+#borrowedBooks_section1 > h2, #bookshelf_title{
+    width: 100%;
+    margin-left: 15%;
+}
+
+#borrowedBooks_section1 > h2 > a{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 30%;
+    padding: 1% 3%;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+    color: #5D737E;
+    border: solid #5D737E 1px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 1s;
+}
+
+#borrowedBooks_section1 > h2 > a:hover{
+    background-color: #5D737E;
+    color: #FFFFFF;
+    border: none;
+}
+
 #borrowedBooks_section1 > a{
     display: flex;
     flex-direction: row;
-    margin: 5% 10%;
+    padding: 5% 10%;
     text-decoration: none;
-    color: black;
+    color: #5D737E;
+    transition: 1s;
+}
+#borrowedBooks_section1 > a:hover{
+    width: 90%;
+    color: #FFFFFF;
+    background-color: #5D737E;;
 }
 
 #borrowedBooks_section1 > a > img{
     width: 10%;
+    height: 10%;
     margin: 3%;
 }
-/* INFO */
 
-#info_section1{
-    width: 90%;
-    margin: 2% 5%;
-    display:flex;
-    flex-direction: column;
+#borrowedBooks_section1 > h3{
+    margin: 15% 0 3% 0;
+    color: #5D737E;
+}
+
+#borrowedBooks_section1 > p {
+    margin-bottom: 30%;
+    text-align: center;
+    color: #000000;
+}
+
+#borrowedBooks_section1 > p > a{
+    color: #000000;
+}
+
+#borrowedBooks_section1 > p > a:hover{
+    text-transform: uppercase;
+}
+
+#borrowedBooks_section1 > p > span{
+   font-family: 'Playfair Display', serif;
+}
+
+/* MANUAL*/
+#manual_section1{
+    width: 80%;
+    margin: 0 auto;
+}
+#manual_section1 > .step{
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    margin: 5% 0;
 }
-#info_section1 > .left{
-    align-self: flex-start;
-    margin: 2% 5%;
+
+#manual_section1 > .step > h2{
+    font-size: 800%;
+    color: #FDD05F;
 }
-#info_section1 > .right{
-    align-self: flex-end;
+
+#manual_section1 > .step > p{
+    width: 60%;
 }
-#info_section1 > p{
-    width: 70%;
-    margin: 4% 10%;
+
+#manual_section1 > .step:nth-child(odd){
+    page-break-after: always;
 }
-#info_section1 > img{
-    width: 70%;
-    height: 90%;
+
+#manual_section1 > .step > img{
+    width: 30%;
+    height: 30%;
+}
+#manual_section1 > input{
+    margin: 1% 47% 5% 47% ;
+
+}
+
+/* INFO */
+#info_section1{
     margin: 2% 10%;
 }
-#info_section1 > a{
+
+#info_section1 > .info{
+    margin-top: 5%;
+    display:flex;
+    flex-direction: column;
+    width: 90%;
+}
+#info_section1 > .info > .left{
+    align-self: flex-start;
+    margin-bottom: 1%;
+}
+
+#info_section1 > .info > .right{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#info_section1 > .info > .right > span{
+    font-size: 300%;
+    color: #5D737E;
+    padding: 0 22.5% 0 3%;
+}
+
+#info_section1 > .info > .right > a{
     color: black;
     margin-bottom: 4%;
     width: 80%;
-    display: block;
-}
-#info_section1 > form{
-    margin-left: 5%;
 }
 
-#info_section1 > form > label > input{
+#info_section1 > .info > form{
+    display: flex;
+    flex-direction: column;
+}
+
+#info_section1 > .info > form > label{
+    padding-top: 3em;
+}
+
+#info_section1 > .info > form > label > input{
     width: 40%;
     margin: 2% 5%;
-    display:block;
+    display: block;
 }
 
-#info_section1 > form > label > textarea{
+#info_section1 > .info > form > label > textarea{
     width: 70%;
     height: 200px;
     margin: 2% 5%;
     display: block;
 }
 
-#info_section1 > form > button{
+#info_section1 > .info > form > button{
     margin: 1% 5%;
+    width: 10%;
 }
 
-#info_section1 > span{
+#info_section1 > .info > span{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 1em 0 0 5em;
 }
 
-#info_section1 > span > a{
-    color: black
+#info_section1 > .info > span > a{
+    text-decoration: none;
+    font-size: 2em;
+    color: #5D737E;
+    transition: 1s;
 }
+
+#info_section1 > .info > span > a:hover{
+    color: #000000;
+}
+
 /* FOOTER */
 footer{
     background-color: #F0F7EE;
@@ -385,5 +555,10 @@ footer{
 
     #home_section1 > a{
         display: none;
+    }
+
+    #borrowedBooks_section1 > a > img{
+        width: 25%;
+        height: 25%;
     }
 }

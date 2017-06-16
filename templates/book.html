@@ -28,6 +28,10 @@
                     <p><b>Availability: </b> Available, but on wrong place</p>
                 {% endif %}
             {% endif %}
+            <div>
+                <a href="{{ url_for("bookshelf") }}">Bookshelf</a>
+                <a href="{{ url_for("borrowedBooks") }}">Borrowed Books</a>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -5,12 +5,22 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Bookshelf</h2>
-    <div id="bookshelf_section1">
-    {{ macros.build_shelf(books)}}
 
+    <div id="bookshelf_section1">
+        <h2 id="bookshelf_title">Bookshelf<a href="{{ url_for("borrowedBooks") }}">Go to borrowed books</a></h2>
+
+        <div id="bookshelf_books">
+            {{ macros.build_shelf(books)}}
+        </div>
     </div>
-    <img id="graph" alt="graph showing how many times a book was borrowed" src="{{ url_for("static", filename="img/_graph.svg") }}">
+
+    <div id="bookshelf_section2">
+        <img alt="graph showing how many times a book was borrowed" src="{{ url_for("static", filename="img/_graph.svg") }}">
+    </div>
+
+
+
+
     <script>
         // for loop to store places and books doesn't work so hardcoded
         var places = [{{ places[0]["Book"] }}, {{ places[1]["Book"] }}, {{ places[2]["Book"] }}, {{ places[3]["Book"] }}, {{ places[4]["Book"] }}, {{ places[5]["Book"] }}, {{ places[6]["Book"] }}, {{ places[7]["Book"] }} ];

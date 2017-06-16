@@ -9,6 +9,7 @@
     <link rel="icon" href="{{ url_for('static',filename='img/_Logo(small).png') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome/css/font-awesome.min.css') }}">
     <title>Shelfchecker - {% block title %} {% endblock%}</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
             <ul>
                 <li><a href="{{url_for("home")}}"><img alt="logo" src="{{ url_for('static',filename='img/_Logo.png') }}"></a></li>
                 <li><a href="{{url_for("login")}}" onclick="showPrompt()">Account</a></li>
-                <li><a href="#">Manual</a></li>
+                <li><a href="{{url_for("manual")}}">Manual</a></li>
                 <li><a href="{{url_for("info")}}">Info</a></li>
             </ul>
         </nav>

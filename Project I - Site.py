@@ -84,7 +84,7 @@ def book(isbn):
     db = DbConnection("P1_Database")
     book = db.getDataFrom_TableBook_ColumnISBN13_ConditionForISBN13(isbn)[0]
     place = db.getDataFrom_TablePlace_ColumnPlaceID_ConditionBook(book["ISBN13"])
-    return render_template('book.html', book=book, place=place)
+    return render_template('book.html', book=book, place=place, buttonLink="#")
 
 @app.route('/borrowedBooks')
 def borrowedBooks():
@@ -106,6 +106,10 @@ def borrowedBooks():
         return render_template('borrowedBooks.html', borrowedBooks=borrowedBooks)
     else:
         return render_template('borrowedBooks.html', borrowedBooks="empty")
+
+@app.route('/manual')
+def manual():
+    return render_template('manual.html')
 
 @app.route('/info', methods=['GET', 'POST'])
 def info():
