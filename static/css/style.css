@@ -110,6 +110,7 @@ header > nav > ul > li:hover:not(:first-child){
     margin: 0 42.5%;
     background-color: #87BBA2;
     font-size: 90%;
+
 }
 
 #home_section2 > p{
@@ -181,7 +182,7 @@ header > nav > ul > li:hover:not(:first-child){
     top: 30%;
     color: #F0F7EE;
     font-weight: bold;
-    font-size: 120%;
+    font-size: 110%;
 }
 
 #account_section1 > a{
@@ -198,6 +199,7 @@ header > nav > ul > li:hover:not(:first-child){
     background-color: #FDD05F;
     font-size: 90%;
     transition: 1s;
+    z-index: 1;
 }
 
 #account_section1 > a:hover{
