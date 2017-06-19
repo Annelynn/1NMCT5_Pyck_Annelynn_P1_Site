@@ -42,38 +42,39 @@ def add_user(firstname, name, email, password):
 
 def verify_credentials(email, password):
 
-    # 1) hash en salt opvragen uit db
+    # 1) get hash and salt from db
     sql = 'SELECT pwd_hash, pwd_salt FROM P1_Database.User WHERE Email=%(check_email)s;'
     params = {
         'check_email': email
     }
     result = db_.query(sql, params, True)
 
-    # als gebruiker niet bestaat moeten we niet verder kijken
+    # when user does not exist, we do not need to look further
     if not result:
         return False
 
-    # 'username' is PK dus er kan maar 1 rij zijn
+    # 'username' is PK so there can only be one row
     db_user = result[0]
 
-    # hash en salt uit resultaat halen
+    # get hash and salt from result
     db_hash_string = db_user['pwd_hash']
     db_salt_string = db_user['pwd_salt']
 
-    # 2) hash berekenen met INGEVOERD WACHTWOORD en OPGESLAGEN SALT
-    # eerst beide weer omzetten naar type bytes
+    # 2) calculate hash with ENTERED PASSWORD and SAVED SALT
+    # firstly convert both to bytes
     pwd_bytes = bytes(password, 'utf_8')
     db_salt_bytes = binascii.unhexlify(db_salt_string)
 
-    # nieuwe hash berekenen
+    # calculate new hash
     hash_bytes = hashlib.pbkdf2_hmac('sha256', pwd_bytes, db_salt_bytes, 100000)
 
-    # omzetten naar string om te kunnen vergelijken
+    # convert to string to compare
     hash_string = binascii.hexlify(hash_bytes).decode('utf-8')
 
-    # 3) enkel als het wachtwoord juist was komt de hash overeen
+    # 3) db_hash is shorter than hash_string so if it is part of the hash_string, it is okay
     return db_hash_string in hash_string
 
+# test
 if __name__ == "__main__":
     if input("Table 'users' will be truncated, continue? (y/n)").lower() == "y":
         db_.execute("DELETE FROM users;")

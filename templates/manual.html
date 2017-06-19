@@ -9,20 +9,44 @@
         <h2>Manual</h2>
         <div class="step">
             <h2>1</h2>
-            <p>Vivamus vulputate scelerisque ante. Aenean sollicitudin vitae neque sit amet laoreet. Nulla efficitur urna sollicitudin mi accumsan placerat. Donec sed rhoncus augue. Suspendisse potenti. Donec rhoncus metus nec tellus consequat suscipit. Aenean eu velit ut urna dignissim condimentum. Quisque eu orci vitae elit malesuada consequat. Nullam vitae suscipit tortor. Nullam varius leo ut turpis mollis, eget cursus felis maximus. Maecenas et mauris ac nunc sagittis scelerisque. Nam eros sem, dictum sed pulvinar nec, sagittis at libero. Nullam imperdiet enim at tempor iaculis. </p>
-            <img src="{{ url_for('static', filename='img/_Placeholder.jpg') }}">
+            <p> Follow the instructions on the LCD screen. Scan your library card to log into the system. </p>
+            <img src="{{ url_for('static', filename='img/Manual_Step1.JPG') }}">
         </div>
 
         <div class="step">
             <h2>2</h2>
-            <p>Cras id quam dignissim, placerat quam vitae, ultricies diam. Phasellus volutpat, felis mollis ullamcorper rutrum, metus erat viverra elit, vel malesuada purus orci in justo. Integer imperdiet egestas ipsum. Integer tellus dolor, dictum et tellus sit amet, consectetur blandit dolor. In ac elit in erat molestie vehicula at sed mauris. Pellentesque non dui finibus, maximus ipsum sed, egestas ante. Fusce vestibulum nec ipsum eget tempus. Mauris urna tellus, ultrices in eros volutpat, hendrerit euismod purus. Integer faucibus urna quis mauris vulputate dictum. Cras dictum urna ut eros pellentesque, at fermentum magna pulvinar. Integer elit ante, lobortis at luctus at, ullamcorper sit amet arcu. Morbi et lectus ex. </p>
-            <img src="{{ url_for('static', filename='img/_Placeholder.jpg') }}">
+            <p> When the LCD screen has welcomed you, you can pick a book to scan. </p>
+            <img src="{{ url_for('static', filename='img/Manual_Step2.JPG') }}">
         </div>
 
         <div class="step">
             <h2>3</h2>
-            <p>Curabitur in ullamcorper lorem, quis luctus nibh. Aenean feugiat ante sed est finibus consectetur. Suspendisse hendrerit massa sem, eget auctor metus posuere nec. Sed ipsum velit, sollicitudin ac magna at, iaculis pharetra lacus. Morbi magna felis, mattis sollicitudin tellus non, lobortis suscipit tortor. Sed eu pharetra neque. Cras ultrices pellentesque nisl sed lacinia. Fusce tincidunt dolor vitae ante mattis hendrerit. Fusce dignissim orci lacus. Curabitur odio arcu, feugiat a iaculis sit amet, blandit id orci. Proin eget quam ut quam vehicula efficitur id hendrerit purus. Ut a magna maximus magna egestas dignissim. Integer dapibus pulvinar ligula, quis cursus magna consequat pulvinar. Nullam vel pellentesque risus, et sodales justo. </p>
-            <img src="{{ url_for('static', filename='img/_Placeholder.jpg') }}">
+            <p> The book is scanned when its name appears on the LCD screen and its place gets shown on the LED strip.</p>
+            <img src="{{ url_for('static', filename='img/Manual_Step3.JPG') }}">
+        </div>
+
+        <div class="step">
+            <h2>4</h2>
+            <p> Place the book on the right place and the LED strip will turn green. </p>
+            <img src="{{ url_for('static', filename='img/Manual_Step4.JPG') }}">
+        </div>
+
+        <div class="step">
+            <h2>5</h2>
+            <p> However if the book was placed on the wrong place, the LED strip will turn red. Please scan the book again and place it on the right place. </p>
+            <img src="{{ url_for('static', filename='img/Manual_Step5.JPG') }}">
+        </div>
+
+        <div class="step">
+            <h2>6</h2>
+            <p> When the LED strip turns blue, it means too much time has passed between scanning the book and placing it on the shelf. The shelf considers this book as borrowed. </p>
+            <img src="{{ url_for('static', filename='img/Manual_Step6.JPG') }}">
+        </div>
+
+        <div class="step">
+            <h2>7</h2>
+            <p> You can scan and place as many books as you like, as long as you first scan it before placing it somewhere on the shelf. When you are finished you can log out by scanning your library card again. </p>
+            <img src="{{ url_for('static', filename='img/Manual_Step7.JPG') }}">
         </div>
 
         <input name="button" type="button" value="Print page" onClick='window.print();'/>

@@ -14,7 +14,7 @@ def createGraph(books):
     for book in books:
         y.append((book["BorrowedAmount"]))
         xlabels.append((book["Title"]))
-    print(xlabels)
+
     # generate graph
     plt.bar(x, y, width=0.9, linewidth=0, align="center", color="#FDD05F")
 

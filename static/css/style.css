@@ -83,6 +83,7 @@ header > nav > ul > li:hover:not(:first-child){
     width: 100%;
     text-align: center;
     top: 20%;
+    color: #F0F7EE;
 }
 
 #home_section1 > p{
@@ -91,6 +92,7 @@ header > nav > ul > li:hover:not(:first-child){
     width: 50%;
     text-align: center;
     margin: 0 25%;
+    color: #F0F7EE;
 }
 
 #home_section1 > a{
@@ -115,10 +117,14 @@ header > nav > ul > li:hover:not(:first-child){
     margin: 5% 12.5%;
 }
 
-#home_section3 > img{
-    width: 75%;
-    margin: 5% 12.5%;
+#home_section2 > p:last-child{
+    margin-bottom: 12.5%;
 }
+
+#home_section2 > p > span{
+    font-family: 'Playfair Display', serif;
+}
+
 /* LOGIN */
 #login_section1 > form > label, #register_section1 > form > label{
     display: flex;
@@ -165,6 +171,7 @@ header > nav > ul > li:hover:not(:first-child){
     width: 100%;
     text-align: center;
     top: 15%;
+    color: #FDD05F;
 }
 
 #account_section1 > p{
@@ -172,6 +179,9 @@ header > nav > ul > li:hover:not(:first-child){
     width: 100%;
     text-align: center;
     top: 30%;
+    color: #F0F7EE;
+    font-weight: bold;
+    font-size: 120%;
 }
 
 #account_section1 > a{
@@ -206,7 +216,7 @@ header > nav > ul > li:hover:not(:first-child){
 #account_section1 > form > button{
     position: absolute;
     text-align: center;
-    top: 85%;
+    top: 75%;
     margin: 0 47.5%;
     overflow: hidden;
     white-space: nowrap;
@@ -415,9 +425,10 @@ header > nav > ul > li:hover:not(:first-child){
 
 #manual_section1 > .step > p{
     width: 60%;
+    align-self: center;
 }
 
-#manual_section1 > .step:nth-child(odd){
+#manual_section1 > .step:nth-child(5){
     page-break-after: always;
 }
 
